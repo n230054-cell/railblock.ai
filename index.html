@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,14 +18,14 @@
     --amber:#F5A623;
     --danger:#FF4D5E;
     --success:#2ED988;
-    --bg:#05080F;
-    --surface:#0A1220;
-    --surface-2:#0F1B2E;
-    --ink:#E7F1FC;
-    --muted:#7E97B3;
-    --line:#1B2940;
-    --shadow: 0 10px 34px rgba(0,0,0,.55), 0 0 0 1px rgba(43,217,245,.06);
-    --glow: 0 0 22px rgba(43,217,245,.35);
+    --bg:#FFFFFF;
+    --surface:#FFFFFF;
+    --surface-2:#F4F6F9;
+    --ink:#0E1116;
+    --muted:#5B6572;
+    --line:#E1E5EB;
+    --shadow:0 10px 28px rgba(20,25,35,.08),0 0 0 1px rgba(20,25,35,.05);
+    --glow:0 0 18px rgba(0,0,0,.10);
     --radius: 14px;
   }
   *{box-sizing:border-box;}
@@ -53,12 +53,12 @@
       linear-gradient(rgba(43,217,245,.035) 1px, transparent 1px),
       linear-gradient(90deg, rgba(43,217,245,.035) 1px, transparent 1px);
     background-size:42px 42px;
-    animation: gridDrift 40s linear infinite;
+    animation:none;
   }
   @keyframes gridDrift{from{background-position:0 0,0 0;} to{background-position:-84px -84px,-84px -84px;}}
   #app, header.topbar, nav.tabs, main, footer{position:relative; z-index:1;}
-  h1,h2,h3,h4,.display{font-family:'Rajdhani',sans-serif;}
-  .mono{font-family:'Share Tech Mono',monospace;}
+  h1,h2,h3,h4,.display{font-family:'Inter',sans-serif;}
+  .mono{font-family:'Inter',sans-serif;}
   ::selection{background:var(--cyan);color:#fff;}
   a{color:inherit;}
   button{font-family:inherit;}
@@ -90,12 +90,12 @@
   @keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.8}}
   .splash-badge{
     display:flex; align-items:center; gap:10px; color:#9FD8E0; letter-spacing:.14em;
-    font-family:'Rajdhani',sans-serif; font-weight:600; font-size:13px; margin-bottom:18px;
+    font-family:'Inter',sans-serif; font-weight:600; font-size:13px; margin-bottom:18px;
     opacity:0; animation: fadeUp .7s ease .15s forwards;
   }
   .splash-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--success); box-shadow:0 0 10px var(--success); animation:pulse-dot 1.4s infinite;}
   .splash-title{
-    font-family:'Rajdhani',sans-serif; font-weight:700; color:#F4FAFC;
+    font-family:'Inter',sans-serif; font-weight:700; color:#F4FAFC;
     font-size:clamp(40px,9vw,88px); letter-spacing:.02em; line-height:.95; text-align:center; margin:0;
     opacity:0; animation: fadeUp .8s ease .3s forwards;
     text-shadow:0 4px 40px rgba(23,182,196,.35);
@@ -122,7 +122,7 @@
   }
   .train-wrap{
     position:absolute; bottom:22px; left:-260px;
-    animation: trainRun 3.2s cubic-bezier(.45,.05,.55,.95) forwards;
+    animation:none;
   }
   @keyframes trainRun{
     0%{left:-260px;}
@@ -136,7 +136,7 @@
   }
   .spark{
     position:absolute; width:4px; height:4px; border-radius:50%; background:#FFD37A;
-    animation: sparkFly 1s ease-out infinite;
+    animation:none;
     box-shadow:0 0 6px #ffcf6b;
   }
   @keyframes sparkFly{
@@ -163,7 +163,8 @@
     background:linear-gradient(120deg, var(--navy-950), var(--navy-900) 60%, var(--rail-blue-2));
     color:#fff; overflow:hidden;
   }
-  .topbar-tracklines{
+  .topbar-tracklines{display:none;
+    
     position:absolute; inset:0; opacity:.12; pointer-events:none;
     background-image:repeating-linear-gradient(90deg, transparent 0 34px, rgba(255,255,255,.9) 34px 36px);
     background-size:200% 100%;
@@ -183,7 +184,7 @@
     animation: badgePulse 2.6s ease-in-out infinite;
   }
   @keyframes badgePulse{0%,100%{box-shadow:0 6px 18px rgba(43,217,245,.35), inset 0 0 0 1px rgba(255,255,255,.25);} 50%{box-shadow:0 6px 26px rgba(43,217,245,.65), inset 0 0 0 1px rgba(255,255,255,.35);}}
-  .brand-name{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:22px; letter-spacing:.01em; line-height:1;}
+  .brand-name{font-family:'Inter',sans-serif; font-weight:700; font-size:22px; letter-spacing:.01em; line-height:1;}
   .brand-name span{
     background:linear-gradient(90deg, var(--cyan), #7fe3ea, var(--cyan));
     background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -193,7 +194,7 @@
   .brand-tag{font-size:11px; color:#AFC7DA; letter-spacing:.12em; margin-top:3px;}
   .topbar-right{display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
   .clock-box{text-align:right;}
-  .clock-time{font-family:'Share Tech Mono',monospace; font-size:26px; letter-spacing:.05em; color:#EAFBFD; text-shadow:0 0 12px rgba(23,182,196,.5);}
+  .clock-time{font-family:'Inter',sans-serif; font-size:26px; letter-spacing:.05em; color:#EAFBFD; text-shadow:0 0 12px rgba(23,182,196,.5);}
   .clock-date{font-size:11px; color:#9FBAD0; letter-spacing:.08em;}
   .status-pill{
     display:flex; align-items:center; gap:7px; background:rgba(47,191,113,.14);
@@ -225,7 +226,7 @@
   }
   .tabs-inner::-webkit-scrollbar{display:none;}
   .tab-btn{
-    background:none; border:none; color:#9FBAD0; padding:14px 18px 12px; font-family:'Rajdhani',sans-serif;
+    background:none; border:none; color:#9FBAD0; padding:14px 18px 12px; font-family:'Inter',sans-serif;
     font-weight:600; font-size:15px; letter-spacing:.03em; cursor:pointer; white-space:nowrap; position:relative;
     display:flex; align-items:center; gap:8px; transition:color .2s ease;
   }
@@ -269,7 +270,7 @@
   }
   .kpi-card:hover::after{transform:scale(1.4);}
   .kpi-label{font-size:12px; color:var(--muted); font-weight:600; letter-spacing:.03em;}
-  .kpi-value{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:34px; color:var(--ink); margin-top:6px; position:relative; text-shadow:0 0 18px rgba(43,217,245,.25);}
+  .kpi-value{font-family:'Inter',sans-serif; font-weight:700; font-size:34px; color:var(--ink); margin-top:6px; position:relative; text-shadow:0 0 18px rgba(43,217,245,.25);}
   .kpi-sub{font-size:12px; margin-top:4px; color:var(--muted); position:relative;}
   .kpi-card.warn .kpi-value{color:var(--danger);}
   .kpi-card.good .kpi-value{color:var(--success);}
@@ -363,7 +364,7 @@
   }
   .block-card:hover{background:rgba(43,217,245,.05);}
   .block-card:last-child{border-bottom:none;}
-  .block-id{font-family:'Rajdhani',sans-serif; font-weight:700; font-size:16px; color:var(--cyan); text-shadow:0 0 10px rgba(43,217,245,.3);}
+  .block-id{font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:var(--cyan); text-shadow:0 0 10px rgba(43,217,245,.3);}
   .block-km-bar{position:relative; height:8px; background:rgba(255,255,255,.07); border-radius:5px; margin-top:6px;}
   .block-km-fill{position:absolute; height:100%; border-radius:5px;}
   .block-time{color:var(--muted); font-size:12px;}
@@ -554,7 +555,7 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
 .pipe-node.done .ic{ animation: none; transform:rotateY(0); }
 
 /* subtle 3D wobble for the splash locomotive */
-.train-wrap svg{ transform-style:preserve-3d; animation: trainWobble3D 1.1s ease-in-out infinite; }
+.train-wrap svg{ transform-style:preserve-3d; animation:none; }
 @keyframes trainWobble3D{
   0%,100%{ transform:perspective(500px) rotateX(0deg) rotateY(0deg); }
   50%{ transform:perspective(500px) rotateX(2.5deg) rotateY(-3deg); }
@@ -584,9 +585,9 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
 }
 .integ-card:hover{ border-color:rgba(43,217,245,.5); box-shadow:var(--glow); }
 .integ-card.coa{ border-color:rgba(43,217,245,.35); }
-.integ-sys{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:20px; color:var(--cyan); letter-spacing:.03em; }
+.integ-sys{ font-family:'Inter',sans-serif; font-weight:700; font-size:20px; color:var(--cyan); letter-spacing:.03em; }
 .integ-dept{ font-size:12px; color:var(--muted); margin-top:2px; }
-.integ-count{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:22px; color:var(--ink); margin-top:10px; }
+.integ-count{ font-family:'Inter',sans-serif; font-weight:700; font-size:22px; color:var(--ink); margin-top:10px; }
 .integ-count span{ font-family:'Inter',sans-serif; font-weight:500; font-size:11px; color:var(--muted); }
 .integ-status{ display:flex; align-items:center; gap:6px; font-size:11px; color:var(--success); margin-top:10px; font-weight:600; letter-spacing:.05em; }
 .integ-status .dot{ width:7px; height:7px; border-radius:50%; background:var(--success); box-shadow:0 0 8px var(--success); animation:pulse-dot 1.6s infinite; }
@@ -599,7 +600,7 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
 }
 .plan-card:hover{ border-color:rgba(43,217,245,.4); box-shadow:var(--shadow), var(--glow); }
 .plan-card-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px; }
-.plan-card-title{ font-family:'Rajdhani',sans-serif; font-weight:700; font-size:16px; color:var(--ink); }
+.plan-card-title{ font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:var(--ink); }
 .plan-dept-split{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
 .plan-dept-chip{
   font-size:11px; padding:3px 9px; border-radius:999px; background:var(--cyan-soft); color:var(--cyan);
@@ -705,8 +706,261 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
   z-index:20; position:relative;
 }
 </style>
+
+<style>
+/* ============================================================
+   SIH FINAL PRESENTATION POLISH
+   Calm light UI, restrained header, and mobile-first behavior.
+============================================================ */
+:root{
+  --rail-blue:#174A7E;
+  --rail-blue-2:#2C6A9E;
+  --cyan:#2C6A9E;
+  --cyan-soft:rgba(44,106,158,.10);
+  --bg:#F7F9FB;
+  --surface:#FFFFFF;
+  --surface-2:#F3F6F8;
+  --ink:#17212B;
+  --muted:#667482;
+  --line:#DCE3E9;
+  --shadow:0 4px 18px rgba(20,35,50,.07),0 0 0 1px rgba(20,35,50,.035);
+  --glow:none;
+}
+html[data-theme="light"] body{background:#F7F9FB;color:#17212B;}
+html[data-theme="light"] body::before{background:none;}
+html[data-theme="light"] body::after{opacity:.22;background-image:linear-gradient(rgba(23,33,43,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,33,43,.035) 1px,transparent 1px);background-size:48px 48px;animation:none;}
+
+/* Professional, subtle typography */
+body,h1,h2,h3,h4,.display,.brand-name,.tab-btn,.kpi-value,.block-id,.plan-card-title,.integ-sys,.integ-count{font-family:'Inter',sans-serif;}
+h1,h2,h3,h4,.display{letter-spacing:-.015em;}
+.brand-name{font-weight:700;letter-spacing:-.02em;}
+.mono,.clock-time{font-family:'Inter',sans-serif;font-variant-numeric:tabular-nums;}
+
+/* Quiet top navigation — no gradients or moving track lines */
+header.topbar{background:#F4F6F8 !important;color:var(--ink);border-bottom:1px solid #DCE3E9;box-shadow:0 2px 10px rgba(20,35,50,.04);}
+html[data-theme="dark"] header.topbar{background:#111820 !important;color:#E7F1FC;border-bottom:1px solid #253342;box-shadow:0 2px 12px rgba(0,0,0,.18);}
+.topbar-tracklines{display:none !important;animation:none !important;}
+.brand-badge{background:#174A7E;box-shadow:none;animation:none !important;}
+.brand-badge:hover{animation:none !important;transform:none !important;box-shadow:none !important;}
+.brand-name span{background:none;color:#174A7E;animation:none;-webkit-text-fill-color:#174A7E;}
+html[data-theme="dark"] .brand-name span{color:#8CB8E2;-webkit-text-fill-color:#8CB8E2;}
+html[data-theme="dark"] .brand-tag,html[data-theme="dark"] .clock-date{color:#91A0AE;}
+html[data-theme="dark"] .clock-time{color:#E7F1FC;}
+.brand-tag{color:#748290;}
+.clock-time{color:#243442;text-shadow:none;}
+.clock-date{color:#748290;}
+.status-pill{background:#F1F7F3;border:1px solid #CFE5D7;color:#32734A;box-shadow:none;animation:none;}
+.status-pill .dot{box-shadow:none;animation:none;}
+.bell-btn,.theme-toggle-btn{background:#FFFFFF;color:#30404E;border:1px solid #DCE3E9;box-shadow:none;}
+html[data-theme="dark"] .bell-btn,html[data-theme="dark"] .theme-toggle-btn{background:#1B2530;color:#DCE6EF;border-color:#31404E;}
+.bell-btn:hover,.theme-toggle-btn:hover{background:#EEF2F5;transform:none !important;}
+html[data-theme="dark"] .bell-btn:hover,html[data-theme="dark"] .theme-toggle-btn:hover{background:#24313D;}
+.bell-badge{border-color:#fff;}
+
+nav.tabs{background:#F8F9FA !important;border-top:none;border-bottom:1px solid #DCE3E9;box-shadow:none;}
+html[data-theme="dark"] nav.tabs{background:#151D26 !important;border-bottom:1px solid #253342;}
+.tab-btn{color:#5F6B76 !important;font-weight:600;text-shadow:none !important;}
+html[data-theme="dark"] .tab-btn{color:#A8B5C2 !important;}
+.tab-btn:hover,.tab-btn.active{color:#174A7E !important;text-shadow:none !important;transform:none !important;}
+html[data-theme="dark"] .tab-btn:hover,html[data-theme="dark"] .tab-btn.active{color:#8CB8E2 !important;}
+.tab-underline{background:#2B628F;box-shadow:none;}
+.tab-train{display:none !important;}
+
+.section-eyebrow{color:#2C6A9E;}
+.section-title{color:#17212B;text-shadow:none;}
+.kpi-card,.panel,.map-panel,.table-wrap,.plan-card{box-shadow:var(--shadow);}
+.kpi-card:hover,.panel:hover,.plan-card:hover{transform:none;box-shadow:var(--shadow);border-color:#CBD6DF;}
+.kpi-card::after{display:none;}
+.btn:hover{transform:none;box-shadow:none;}
+.btn::before{display:none;}
+.btn.primary{background:#174A7E;box-shadow:none;}
+
+/* Remove decorative motion that competes with the prototype content. */
+.brand-badge,.status-pill,.pipe-node.active .ic,.loading-track,.splash-tap,.train-wrap svg{animation:none !important;}
+.kpi-card,.panel,.integ-card,.plan-card{animation:none !important;}
+
+/* Remove accent-color UI styles entirely */
+.accent-swatch-wrap,#accentColorInput,.theme-tip{display:none !important;}
+
+/* Mobile / phone presentation */
+@media (max-width: 860px){
+  .topbar-inner{padding:11px 14px;gap:10px;}
+  .brand-badge{width:40px;height:40px;border-radius:9px;}
+  .brand-badge svg{width:23px;height:23px;}
+  .brand-name{font-size:18px;}
+  .brand-tag{font-size:9px;letter-spacing:.08em;}
+  .topbar-right{margin-left:auto;gap:8px;}
+  .clock-box{display:none;}
+  .status-pill{font-size:9px;padding:5px 8px;}
+  .bell-btn,.theme-toggle-btn{width:36px;height:36px;border-radius:9px;}
+  .tabs-inner{padding:0 8px;gap:0;}
+  .tab-btn{padding:11px 13px 10px;font-size:13px;}
+  main{padding:20px 14px 54px;}
+  .section-title{font-size:24px;}
+  .section-desc{font-size:13px;}
+  .grid-2{grid-template-columns:1fr;}
+  .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  .kpi-card{padding:14px;}
+  .kpi-value{font-size:28px;}
+  .panel,.map-panel{padding:15px;}
+  .track-svg-wrap{min-width:620px;}
+  .filters-row{gap:8px;}
+  select,input[type=text]{max-width:100%;min-width:0;}
+  .pipeline{padding:18px 2px;}
+}
+@media (max-width: 560px){
+  .topbar-right .status-pill{display:none;}
+  .brand-name{font-size:17px;}
+  .brand-tag{font-size:8px;}
+  .tab-btn{padding:10px 11px 9px;font-size:12px;}
+  main{padding:17px 11px 44px;}
+  .section-head{margin-bottom:15px;}
+  .section-title{font-size:21px;line-height:1.2;}
+  .section-eyebrow{font-size:10px;}
+  .kpi-grid{grid-template-columns:1fr 1fr;gap:8px;}
+  .kpi-card{padding:12px 11px;}
+  .kpi-label{font-size:10px;}
+  .kpi-value{font-size:24px;margin-top:4px;}
+  .kpi-sub{font-size:10px;}
+  .panel h3{font-size:15px;}
+  .bar-row .lbl{width:82px;font-size:11px;}
+  .bar-row .val{font-size:11px;}
+  .block-card{grid-template-columns:1fr;gap:6px;padding:12px;}
+  .assign-row{grid-template-columns:1fr;gap:5px;padding:11px 12px;}
+  .table-wrap{overflow-x:auto;}
+  table{min-width:720px;}
+  .pipeline{align-items:stretch;}
+  .pipe-node{width:125px;padding:12px 8px;}
+  footer{padding:20px 12px 28px;}
+}
+@media (max-width:380px){
+  .brand-tag{display:none;}
+  .tab-btn{padding-left:9px;padding-right:9px;font-size:11px;}
+  .kpi-value{font-size:22px;}
+}
+</style>
+
+<style>
+/* Final presentation refinements */
+#splash{background:#F7F9FB !important;color:#17212B;}
+.splash-tricolor{opacity:.55;}
+.splash-badge{color:#667482;}
+.splash-title{color:#17212B;text-shadow:none !important;}
+.splash-title span{color:#174A7E;}
+.splash-sub{color:#667482;}
+.track-stage{display:none !important;}
+.loading-track{display:none !important;}
+.splash-tap{color:#667482;}
+</style>
+<style id="final-theme-fix">
+/* FINAL SIH PRESENTATION THEME */
+:root{
+  --bg:#F6F8FA;
+  --surface:#FFFFFF;
+  --surface-2:#F1F4F7;
+  --ink:#17212B;
+  --muted:#667482;
+  --line:#D9E1E8;
+  --rail-blue:#174A7E;
+  --rail-blue-2:#2C628F;
+  --cyan:#2C628F;
+  --cyan-soft:rgba(44,98,143,.10);
+  --navy-950:#FFFFFF;
+  --navy-900:#EEF2F5;
+  --navy-800:#E5EBF0;
+  --shadow:0 3px 14px rgba(28,43,58,.06),0 0 0 1px rgba(28,43,58,.025);
+}
+
+/* Light is the fixed presentation default. */
+html[data-theme="light"] body{background:var(--bg)!important;color:var(--ink)!important;}
+html[data-theme="light"] body::before{background:none!important;}
+html[data-theme="light"] body::after{opacity:.16!important;background-image:linear-gradient(rgba(23,33,43,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,33,43,.035) 1px,transparent 1px)!important;background-size:48px 48px!important;animation:none!important;}
+
+/* Subtle colored menu/header bars */
+header.topbar{background:#EAF0F5!important;color:#203142!important;border-bottom:1px solid #D5DEE6!important;box-shadow:0 2px 8px rgba(25,45,65,.05)!important;}
+nav.tabs{background:#E3EAF0!important;border-top:1px solid #D5DEE6!important;border-bottom:1px solid #D2DCE5!important;box-shadow:none!important;}
+.tab-btn{color:#52616F!important;text-shadow:none!important;}
+.tab-btn:hover,.tab-btn.active{color:#174A7E!important;text-shadow:none!important;transform:none!important;}
+.tab-underline{background:#174A7E!important;box-shadow:none!important;}
+.brand-name span{background:none!important;color:#174A7E!important;-webkit-text-fill-color:#174A7E!important;animation:none!important;}
+.brand-tag,.clock-date{color:#687887!important;}
+.clock-time{color:#203142!important;text-shadow:none!important;}
+.status-pill{background:#F1F7F3!important;border:1px solid #CFE3D6!important;color:#32734A!important;box-shadow:none!important;animation:none!important;}
+.bell-btn,.theme-toggle-btn{background:#F8FAFC!important;color:#30404E!important;border:1px solid #D5DEE6!important;box-shadow:none!important;}
+.bell-btn:hover,.theme-toggle-btn:hover{background:#EDF2F6!important;transform:none!important;}
+
+/* Fixed accent picker remains removed. */
+.accent-swatch-wrap,#accentColorInput,.theme-tip{display:none!important;}
+.topbar-tracklines,.tab-train{display:none!important;animation:none!important;}
+
+/* DARK MODE: switch the entire application, not only the menu */
+html[data-theme="dark"]{
+  --bg:#111820;
+  --surface:#18212B;
+  --surface-2:#202B36;
+  --ink:#E8EEF3;
+  --muted:#9AA8B5;
+  --line:#30404E;
+  --navy-950:#10171E;
+  --navy-900:#17212A;
+  --navy-800:#202B36;
+  --rail-blue:#7FA8CC;
+  --rail-blue-2:#8EB6D7;
+  --cyan:#8EB6D7;
+  --cyan-soft:rgba(142,182,215,.12);
+  --shadow:0 4px 18px rgba(0,0,0,.20),0 0 0 1px rgba(255,255,255,.025);
+}
+html[data-theme="dark"] body{background:var(--bg)!important;color:var(--ink)!important;}
+html[data-theme="dark"] body::before{background:none!important;}
+html[data-theme="dark"] body::after{opacity:.10!important;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px)!important;background-size:48px 48px!important;animation:none!important;}
+html[data-theme="dark"] header.topbar{background:#202B36!important;color:#E8EEF3!important;border-bottom:1px solid #334453!important;box-shadow:0 2px 10px rgba(0,0,0,.18)!important;}
+html[data-theme="dark"] nav.tabs{background:#1A242E!important;border-top:1px solid #2B3946!important;border-bottom:1px solid #334453!important;}
+html[data-theme="dark"] .tab-btn{color:#AAB7C3!important;}
+html[data-theme="dark"] .tab-btn:hover,html[data-theme="dark"] .tab-btn.active{color:#A9C7DF!important;}
+html[data-theme="dark"] .tab-underline{background:#8EB6D7!important;}
+html[data-theme="dark"] .brand-name span{color:#A9C7DF!important;-webkit-text-fill-color:#A9C7DF!important;}
+html[data-theme="dark"] .brand-tag,html[data-theme="dark"] .clock-date{color:#94A3B0!important;}
+html[data-theme="dark"] .clock-time{color:#E8EEF3!important;}
+html[data-theme="dark"] .bell-btn,html[data-theme="dark"] .theme-toggle-btn{background:#24313D!important;color:#DDE6ED!important;border-color:#3A4A58!important;}
+html[data-theme="dark"] .bell-btn:hover,html[data-theme="dark"] .theme-toggle-btn:hover{background:#2B3946!important;}
+html[data-theme="dark"] .section-title,html[data-theme="dark"] .panel h3,html[data-theme="dark"] .kpi-value,html[data-theme="dark"] .alert-title,html[data-theme="dark"] .pipe-node .lbl,html[data-theme="dark"] .plan-card-title{color:var(--ink)!important;text-shadow:none!important;}
+html[data-theme="dark"] .kpi-card,html[data-theme="dark"] .panel,html[data-theme="dark"] .map-panel,html[data-theme="dark"] .table-wrap,html[data-theme="dark"] .plan-card,html[data-theme="dark"] .pipe-node,html[data-theme="dark"] .integ-card{background:var(--surface)!important;border-color:var(--line)!important;box-shadow:var(--shadow)!important;}
+html[data-theme="dark"] thead th{background:#202B36!important;color:#D7E0E7!important;}
+html[data-theme="dark"] tbody td{color:var(--ink)!important;border-color:var(--line)!important;}
+html[data-theme="dark"] select,html[data-theme="dark"] input[type=text]{background:#18212B!important;color:var(--ink)!important;border-color:var(--line)!important;color-scheme:dark;}
+html[data-theme="dark"] .btn{background:#202B36!important;color:var(--ink)!important;border-color:var(--line)!important;}
+html[data-theme="dark"] .btn.primary{background:#315D82!important;color:#fff!important;}
+html[data-theme="dark"] footer{color:var(--muted)!important;}
+html[data-theme="dark"] .rail-tooltip,html[data-theme="dark"] .toast{background:#0F151B!important;color:#E8EEF3!important;}
+html[data-theme="dark"] .splash-tricolor{opacity:.55;}
+
+/* Theme the intro/splash as part of the whole application. */
+html[data-theme="light"] #splash{background:#F6F8FA!important;color:#17212B!important;}
+html[data-theme="light"] .splash-title{color:#17212B!important;text-shadow:none!important;}
+html[data-theme="light"] .splash-title span{color:#174A7E!important;}
+html[data-theme="light"] .splash-sub{color:#667482!important;}
+html[data-theme="light"] .splash-badge{color:#536676!important;}
+html[data-theme="light"] .splash-tap{color:#7A8792!important;}
+html[data-theme="dark"] #splash{background:#111820!important;color:#E8EEF3!important;}
+html[data-theme="dark"] .splash-title{color:#E8EEF3!important;text-shadow:none!important;}
+html[data-theme="dark"] .splash-title span{color:#A9C7DF!important;}
+html[data-theme="dark"] .splash-sub{color:#9AA8B5!important;}
+html[data-theme="dark"] .splash-badge{color:#AAB7C3!important;}
+html[data-theme="dark"] .splash-tap{color:#7F8D99!important;}
+
+/* Prevent the old decorative motion from returning through earlier rules. */
+.brand-badge,.status-pill,.pipe-node.active .ic,.loading-track,.splash-tap,.train-wrap svg,.kpi-card,.panel,.integ-card,.plan-card{animation:none!important;}
+
+@media(max-width:600px){
+  header.topbar{background:#EAF0F5!important;}
+  nav.tabs{background:#E3EAF0!important;}
+  html[data-theme="dark"] header.topbar{background:#202B36!important;}
+  html[data-theme="dark"] nav.tabs{background:#1A242E!important;}
+}
+</style>
 </head>
 <body>
+<script>document.documentElement.setAttribute("data-theme","light");</script>
 
 <div id="splash">
   <div class="splash-tricolor"></div>
@@ -718,46 +972,13 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
   <h1 class="splash-title">RAIL<span>BLOCK</span> AI</h1>
   <p class="splash-sub">AI-powered automatic block planning to maximize asset availability for train operations on Indian Railways.</p>
 
-  <div class="track-stage">
-    <div class="rail-line"></div>
-    <div class="sleepers"></div>
-    <div class="train-wrap">
-      <div class="headlight-glow"></div>
-      <svg width="240" height="90" viewBox="0 0 240 90">
-        <!-- WAP style loco silhouette -->
-        <rect x="18" y="26" width="190" height="34" rx="10" fill="#17B6C4"/>
-        <rect x="18" y="26" width="190" height="12" rx="6" fill="#0F4C81"/>
-        <rect x="30" y="14" width="150" height="16" rx="6" fill="#0F4C81"/>
-        <rect x="196" y="18" width="20" height="30" rx="6" fill="#0A2E52"/>
-        <circle cx="212" cy="30" r="5" fill="#FFE8A3"/>
-        <rect x="40" y="34" width="20" height="14" rx="2" fill="#0A2E52" opacity=".55"/>
-        <rect x="66" y="34" width="20" height="14" rx="2" fill="#0A2E52" opacity=".55"/>
-        <rect x="92" y="34" width="20" height="14" rx="2" fill="#0A2E52" opacity=".55"/>
-        <rect x="118" y="34" width="20" height="14" rx="2" fill="#0A2E52" opacity=".55"/>
-        <rect x="144" y="34" width="20" height="14" rx="2" fill="#0A2E52" opacity=".55"/>
-        <circle cx="46" cy="66" r="10" fill="#08131F"/>
-        <circle cx="46" cy="66" r="4" fill="#9FE7EC"/>
-        <circle cx="90" cy="66" r="10" fill="#08131F"/>
-        <circle cx="90" cy="66" r="4" fill="#9FE7EC"/>
-        <circle cx="150" cy="66" r="10" fill="#08131F"/>
-        <circle cx="150" cy="66" r="4" fill="#9FE7EC"/>
-        <circle cx="194" cy="66" r="10" fill="#08131F"/>
-        <circle cx="194" cy="66" r="4" fill="#9FE7EC"/>
-        <rect x="16" y="52" width="200" height="6" fill="#08131F"/>
-      </svg>
-      <div class="spark" style="left:20px; top:30px; animation-delay:0s;"></div>
-      <div class="spark" style="left:20px; top:36px; animation-delay:.3s;"></div>
-      <div class="spark" style="left:20px; top:24px; animation-delay:.6s;"></div>
-    </div>
-  </div>
-
   <div class="loading-track"><div class="loading-fill"></div></div>
   <div class="splash-tap">TAP ANYWHERE TO CONTINUE</div>
 </div>
 
 <div id="app">
   <header class="topbar">
-    <div class="topbar-tracklines"></div>
+    
     <div class="topbar-inner">
       <div class="brand">
         <div class="brand-badge">
@@ -765,7 +986,7 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
         </div>
         <div>
           <div class="brand-name">RAIL<span>BLOCK</span> AI</div>
-          <div class="brand-tag">INDIAN RAILWAYS · SIH26027</div>
+          <div class="brand-tag">INDIAN RAILWAYS</div>
         </div>
       </div>
       <div class="topbar-right">
@@ -775,10 +996,7 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
         </div>
         <div class="status-pill"><span class="dot"></span> SYSTEM LIVE</div>
         <div class="theme-controls">
-          <button class="theme-toggle-btn" id="themeToggleBtn" title="Switch light / dark theme">🌙</button>
-          <div class="accent-swatch-wrap" title="Pick your theme color">
-            <input type="color" id="accentColorInput" value="#2BD9F5">
-          </div>
+          <button class="theme-toggle-btn" id="themeToggleBtn" title="Switch light / dark theme">☾</button>
         </div>
         <button class="bell-btn" id="bellBtn" title="Officer Alerts">
           🔔
@@ -790,15 +1008,15 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
 
   <nav class="tabs">
     <div class="tabs-inner" id="tabsInner">
-      <button class="tab-btn active" data-tab="dashboard">📊 Dashboard</button>
-      <button class="tab-btn" data-tab="map">🛰️ Live Track Map</button>
-      <button class="tab-btn" data-tab="tasks">🛠️ Maintenance Tasks</button>
-      <button class="tab-btn" data-tab="blocks">🧱 Block Planner</button>
-      <button class="tab-btn" data-tab="scheduler">🤖 AI Scheduler</button>
-      <button class="tab-btn" data-tab="planning">🗓️ Block Plans</button>
+      <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+      <button class="tab-btn" data-tab="map">Live Track Map</button>
+      <button class="tab-btn" data-tab="tasks">Maintenance Tasks</button>
+      <button class="tab-btn" data-tab="blocks">Block Planner</button>
+      <button class="tab-btn" data-tab="scheduler">AI Scheduler</button>
+      <button class="tab-btn" data-tab="planning">Block Plans</button>
       <button class="tab-btn" data-tab="alerts">🚨 Officer Alerts <span class="tab-badge" id="alertsTabBadge" style="display:none;">0</span></button>
       <div class="tab-underline" id="tabUnderline"></div>
-      <div class="tab-train" id="tabTrain">🚆</div>
+      
     </div>
   </nav>
 
@@ -957,10 +1175,6 @@ html[data-theme="light"] .accent-swatch-wrap{ border-color:rgba(0,0,0,.15); }
     </section>
 
   </main>
-
-  <footer>
-    Built for <b>SIH26027 — AI-Powered Automatic Block Planning for Indian Railways</b> · Integrates TMS · SMMS · TDMS · COA · React · Python · FastAPI · MySQL · scikit-learn
-  </footer>
 </div>
 
 <div id="toast-wrap"></div>
@@ -1242,7 +1456,7 @@ function buildDashboard(){
     `<div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">` +
     Object.entries(typeCounts).map(([t,c])=>`
       <div style="flex:1; min-width:100px; background:${typeColors[t]||'#666'}12; border:1px solid ${typeColors[t]||'#666'}33; border-radius:10px; padding:12px; text-align:center;">
-        <div style="font-family:'Rajdhani',sans-serif; font-weight:700; font-size:22px; color:${typeColors[t]||'#333'}">${c}</div>
+        <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:22px; color:${typeColors[t]||'#333'}">${c}</div>
         <div style="font-size:11.5px; color:var(--muted);">${t}</div>
       </div>`).join('') + `</div>` +
     `<div style="font-size:12.5px; color:var(--muted);">Peak operating priority (5 = highest): Express services. Section carries a mix of EMU, Passenger, Express &amp; Goods traffic across the day.</div>`;
@@ -1783,51 +1997,23 @@ document.getElementById('horizonMonthlyBtn').addEventListener('click', function(
 (function initTheme(){
   const root = document.documentElement;
   const toggleBtn = document.getElementById('themeToggleBtn');
-  const colorInput = document.getElementById('accentColorInput');
-
-  function shadeColor(hex, percent){
-    const f = parseInt(hex.slice(1),16);
-    const t = percent<0 ? 0 : 255;
-    const p = Math.abs(percent)/100;
-    const R = f>>16, G = f>>8 & 0x00FF, B = f & 0x0000FF;
-    const val = 0x1000000 +
-      (Math.round((t-R)*p)+R)*0x10000 +
-      (Math.round((t-G)*p)+G)*0x100 +
-      (Math.round((t-B)*p)+B);
-    return '#'+val.toString(16).slice(1);
-  }
-
-  function applyAccent(hex){
-    root.style.setProperty('--cyan', hex);
-    root.style.setProperty('--rail-blue-2', hex);
-    root.style.setProperty('--rail-blue', shadeColor(hex,-30));
-    root.style.setProperty('--cyan-soft', hex+'29');
-  }
+  if(!toggleBtn) return;
 
   function updateToggleIcon(){
-    toggleBtn.textContent = root.getAttribute('data-theme')==='light' ? '🌙' : '☀️';
+    const isLight = root.getAttribute('data-theme') === 'light';
+    toggleBtn.textContent = isLight ? '☾' : '☀';
+    toggleBtn.title = isLight ? 'Switch to dark mode' : 'Switch to light mode';
   }
 
-  let savedTheme = 'dark', savedAccent = null;
-  try{
-    savedTheme = localStorage.getItem('railblock_theme') || 'dark';
-    savedAccent = localStorage.getItem('railblock_accent');
-  }catch(e){}
-
-  root.setAttribute('data-theme', savedTheme);
-  if(savedAccent){ applyAccent(savedAccent); colorInput.value = savedAccent; }
+  // Always open the SIH prototype in light mode for presentation consistency.
+  root.setAttribute('data-theme','light');
   updateToggleIcon();
 
   toggleBtn.addEventListener('click', function(){
-    const next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
-    try{ localStorage.setItem('railblock_theme', next); }catch(e){}
+    try { localStorage.setItem('railblock_theme', next); } catch(e) {}
     updateToggleIcon();
-  });
-
-  colorInput.addEventListener('input', function(e){
-    applyAccent(e.target.value);
-    try{ localStorage.setItem('railblock_accent', e.target.value); }catch(e){}
   });
 })();
 
